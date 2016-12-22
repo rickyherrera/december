@@ -11,6 +11,7 @@ struct node {
     struct node *child;
 };
 
+/* Create a linked list w/ N nodes. */
 struct node *createList(int *arr, int n) {
     struct node *head = NULL;
     struct node *p;
@@ -29,16 +30,16 @@ struct node *createList(int *arr, int n) {
     return head;
 }
 
+/* Print nodes of a linked list. */
 void printList(struct node *head){
     while (head){
-        printf("%d", head->data);
+        printf("%d ", head->data);
         head = head->next;
     }
     printf("\n");
 }
 
-struct node *createList(void)
-{
+struct node *createList(void) {
     int arr1[] = {10, 5, 12, 7, 11};
     int arr2[] = {4, 20, 13};
     int arr3[] = {17, 6};
@@ -58,7 +59,6 @@ struct node *createList(void)
     struct node *head7 = createList(arr7, SIZE(arr7));
     struct node *head8 = createList(arr8, SIZE(arr8));
  
- 
     /* modify child pointers to create the list shown above */
     head1->child = head2;
     head1->next->next->next->child = head3;
@@ -67,7 +67,6 @@ struct node *createList(void)
     head2->next->child = head6;
     head2->next->next->child = head7;
     head7->child = head8;
- 
  
     /* Return head pointer of first linked list.  Note that all nodes are
        reachable from head1 */

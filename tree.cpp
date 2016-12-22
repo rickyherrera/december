@@ -6,9 +6,8 @@ class Tree {
     Node root;
 }
 
-class Node {
-    char name;
+struct Node {
     int val;
-    Node lNode;
-    Node rNode;
-}
+    Node* lNode;
+    Node* rNode;
+};
